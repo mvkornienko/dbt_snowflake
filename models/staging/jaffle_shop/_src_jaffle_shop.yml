@@ -1,5 +1,8 @@
+version: 2
+
 sources:
   - name: jaffle_shop
+    description: A clone of a Postgres database
     database: raw
     schema: jaffle_shop
     config:
@@ -13,6 +16,35 @@ sources:
       loaded_at_field: _etl_loaded_at
     tables:
       - name: customers
+        description: Raw customers data
         config:
           freshness: null
+        columns:
+          - name: id
+            description: primary key
+            data_type: number
+            data_tests:
+              - not_null
+              - unique
+          - name: first_name
+            data_type: varchar
+          - name: last_name
+            data_type: varchar
+
       - name: orders
+        description: Raw orders data
+        columns:
+          - name: id
+            description: primary key
+            data_type: number
+            data_tests:
+              - not_null
+              - unique
+          - name: user_id
+            data_type: number
+          - name: order_date
+            data_type: date
+          - name: status
+            data_type: varchar
+          - name: _etl_loaded_at
+            data_type: timestamp_ntz
