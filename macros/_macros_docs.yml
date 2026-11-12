@@ -1,0 +1,6 @@
+macros:
+  - name: cents_to_dollars
+    description: "Convert cents to dollars"
+    arguments:
+      - name: filed_name
+        type: string

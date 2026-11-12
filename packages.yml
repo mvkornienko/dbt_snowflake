@@ -1,3 +1,11 @@
 packages:
   - package: dbt-labs/codegen
     version: 0.14.1
+  - package: dbt-labs/audit_helper
+    version: 0.14.0
+  - package: dbt-labs/dbt_utils
+    version: 1.4.1    
+#  - git: https://gitlab.com/gitlab-data/snowflake_spend.git
+#    revision: remove-role_name-null-test
+#  - package: fishtown-analytics/dbt_utils
+#    version: 0.2.1

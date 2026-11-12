@@ -1,0 +1,6 @@
+seeds:
+  - name: employees
+    config: 
+      grants: 
+        +select:
+          - public

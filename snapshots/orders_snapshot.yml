@@ -1,0 +1,12 @@
+snapshots:
+  - name: orders_snapshot
+    relation: ref('stg_jaffle_shop__orders')
+    config:
+      schema: snapshots
+      strategy: check
+      check_cols:
+        - customer_id
+        - order_date
+        - order_status
+      unique_key: order_id
+      hard_deletes: invalidate
