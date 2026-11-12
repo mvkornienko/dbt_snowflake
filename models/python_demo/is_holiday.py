@@ -1,7 +1,9 @@
 import holidays
 
 def model(dbt, session):
-    dbt.config(materialized="table", packages=["pandas", "pyarrow", "holidays"])
+    dbt.config(enabled=True,
+               materialized="table", 
+               packages=["pandas", "pyarrow", "holidays"])
     
     is_holidays = holidays.country_holidays('US')
 

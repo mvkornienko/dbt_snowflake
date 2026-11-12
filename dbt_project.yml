@@ -24,6 +24,8 @@ clean-targets:         # directories to be removed by `dbt clean`
   - "target"
   - "dbt_packages"
 
+dbt-cloud:
+  project-id: '70506183178601'  # This is the project ID for your dbt Cloud project. You can find this in the URL of your dbt Cloud project.
 
 # Configuring models
 # Full documentation: https://docs.getdbt.com/docs/configuring-models
@@ -41,3 +43,5 @@ models:
       +materialized: view
     marts:
       +materialized: table
+#  snowflake_spend:
+#    +enabled: false
