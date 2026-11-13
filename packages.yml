@@ -9,3 +9,5 @@ packages:
 #    revision: remove-role_name-null-test
 #  - package: fishtown-analytics/dbt_utils
 #    version: 0.2.1
+  - package: tnightengale/dbt_meta_testing
+    version: 0.4.0

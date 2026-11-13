@@ -39,8 +39,13 @@ dbt-cloud:
 
 models:
   dbt_cloud:
+    +persist_docs: 
+      relation: true
+      columns: true
     staging:
       +materialized: view
+      +meta:
+        required_tests: {"unique.*|not_null": 2}
     marts:
       +materialized: table
 #  snowflake_spend:
