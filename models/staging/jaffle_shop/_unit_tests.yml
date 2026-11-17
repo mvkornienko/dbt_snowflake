@@ -1,0 +1,20 @@
+unit_tests:
+  - name: orders_check_valid_order_date
+    model: stg_jaffle_shop__orders
+    description: Checking if order_date is valid
+    given:
+      - input:  source('jaffle_shop', 'orders') 
+        format: csv
+        rows: |
+          id,user_id,order_date,status
+          1,1,2000-01-01 10:00:00,returned
+          2,1,2001-01-01 10:00:00,return_pending
+          3,1,2002-01-01 10:00:00,pending
+    expect:
+        format: csv
+        rows: |
+          order_id,customer_id,order_date,order_status,valid_order_date
+          1,1,2000-01-01 10:00:00,returned,
+          2,1,2001-01-01 10:00:00,return_pending,
+          3,1,2002-01-01 10:00:00,pending,2002-01-01 10:00:00
+      
